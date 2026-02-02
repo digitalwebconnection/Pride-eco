@@ -21,7 +21,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="w-full fixed top-0 z-50">
+    <header className="w-full fixed top-0 z-90">
       {/* Top Bar */}
       <div className="bg-[#2c245a] text-white text-sm">
         <div className="max-w-7xl mx-auto px-4 flex flex-wrap items-center justify-between py-2 gap-2">
