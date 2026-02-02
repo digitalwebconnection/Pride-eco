@@ -82,12 +82,12 @@ const SolarHero = () => {
                 </div>
             </div>
 
-            <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-12 pb-24">
+            <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-40 md:pt-12 pb-24">
                 <motion.div
                     variants={containerVariants}
                     initial="hidden"
                     animate="show"
-                    className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center"
+                    className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-10 items-center"
                 >
                     {/* --- LEFT CONTENT --- */}
                     <motion.div className="lg:col-span-7  text-center lg:text-left pt-8">
