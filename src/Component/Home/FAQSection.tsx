@@ -62,7 +62,7 @@ const FAQSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
               viewport={{ once: true }}
-              className="border border-gray-200 rounded-xl overflow-hidden"
+              className="border border-gray-500/50 rounded-xl overflow-hidden"
             >
               {/* Question */}
               <button

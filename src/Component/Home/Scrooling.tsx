@@ -27,9 +27,9 @@ export default function ProductScroll() {
     const duration = prefersReducedMotion ? 0 : Math.max(10, BASE_DURATION - (isSmall ? 8 : 0));
 
     return (
-        <main className="w-full bg-slate-50 py-16">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6">
-                <header className="mb-12 text-center">
+        <main className="w-full bg-slate-50 py-6">
+            <div className="mx-auto max-w-7xl px-4 sm:px-0">
+                <header className="mb-6 text-center">
                     <span className="text-green-600 font-bold tracking-widest uppercase text-xs mb-2 block">
                         Our Technology Stack
                     </span>
@@ -77,10 +77,10 @@ function Marquee({ prefersReducedMotion, duration }: { prefersReducedMotion: boo
     const logos = [
         { label: "High Efficiency Panels", src: "https://static.vecteezy.com/system/resources/thumbnails/053/963/638/small/a-solar-panel-positioned-on-grassy-ground-designed-to-harness-sunlight-for-energy-production-png.png", alt: "Solar Panels" },
         { label: "Smart Inverters", src: "https://png.pngtree.com/png-vector/20240730/ourmid/pngtree-choosing-the-right-solar-power-inverter-for-your-system-png-image_13291828.png", alt: "Inverters" },
-        { label: "ACDB Protection", src: "https://www.sunseedpower.com/images/products/std%20acdb%2032ph.png", alt: "ACDB" },
+        { label: "ACDB Protection", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdYWeOFM0wkT3AS4811uCPmzGRNQ5h6jqKjg&s", alt: "ACDB" },
         { label: "DCDB Enclosures", src: "https://cpimg.tistatic.com/9819920/b/4/solar-dcdb-box.png", alt: "DCDB" },
         { label: "Lithium Storage", src: "https://solarmartindia.com/wp-content/uploads/2025/04/Untitled-design-61.png", alt: "Battery" },
-        { label: "Structure Mounts", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa3QMqYOyuAAQ-T4wCcmRkIJ_BC6-Uz692rg&s", alt: "Mounts" },
+        { label: "Structure Mounts", src: "https://5.imimg.com/data5/SELLER/Default/2024/8/443630910/JH/QY/GX/124228058/liberty-370-250x250.jpg", alt: "Mounts" },
         { label: "Safety Earthing", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMqWRVCWcIeH8ehBt2nFzP18EVFHNM5mJcOQ&s", alt: "Earthing" },
     ];
 
@@ -108,21 +108,19 @@ function ProductCard({ item }: { item: { src: string; alt: string; label: string
     return (
         <div className="flex flex-col items-center gap-3">
             <div className="
-                relative flex items-center justify-center rounded-2xl border border-slate-200 
-                bg-white p-4 shadow-sm hover:shadow-md transition-shadow
+                relative flex items-center justify-center 
+                bg-white p-4  transition-shadow
                 h-28 w-40 sm:h-36 sm:w-52
             ">
                 <img
                     src={item.src}
                     alt={item.alt}
-                    className="max-h-full max-w-full object-contain drop-shadow-md hover:scale-110 transition-transform duration-500"
+                    className="max-h-full max-w-full object-contain  hover:scale-110 transition-transform duration-500"
                     loading="eager"
                     decoding="async"
                 />
             </div>
-            <span className="text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-widest">
-                {item.label}
-            </span>
+        
         </div>
     );
 }

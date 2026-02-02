@@ -43,7 +43,7 @@ const extendedTestimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="relative bg-slate-50 py-20 overflow-hidden">
+    <section className="relative bg-slate-50 py-10 overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-green-200/40 rounded-full blur-3xl -mr-40 -mt-24" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-yellow-200/40 rounded-full blur-3xl -ml-40 -mb-24" />

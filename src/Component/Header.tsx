@@ -45,7 +45,7 @@ export default function Header() {
       <div
         className={`transition-all duration-300 ${
           isScrolled
-            ? "bg-white shadow-md py-3"
+            ? "bg-white shadow-xl py-3"
             : "bg-white py-5"
         }`}
       >
@@ -67,10 +67,12 @@ export default function Header() {
             <a href="#" className="hover:text-[#2c245a]">Home</a>
             <a href="#" className="hover:text-[#2c245a]">About Us</a>
             <a href="#" className="hover:text-[#2c245a]">Products</a>
-            <a href="#" className="hover:text-[#2c245a]">Videos</a>
+            <a href="#" className="hover:text-[#2c245a]">Services</a>
+            <a href="#" className="hover:text-[#2c245a]">Careers</a>
+            <a href="#" className="hover:text-[#2c245a]">Blog</a>
             <a
               href="#"
-              className="border border-[#2c245a] px-4 py-2 rounded hover:bg-[#2c245a] hover:text-white transition"
+              className="border border-[#2c245a] px-8 py-1 rounded-3xl hover:bg-[#2c245a] hover:text-white transition"
             >
               Contact Us
             </a>

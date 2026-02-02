@@ -90,7 +90,7 @@ const SolarHero = () => {
                     className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center"
                 >
                     {/* --- LEFT CONTENT --- */}
-                    <motion.div className="lg:col-span-8 text-center lg:text-left pt-8">
+                    <motion.div className="lg:col-span-7  text-center lg:text-left pt-8">
                         <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm mb-8">
                             <span className="relative flex h-2 w-2">
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
@@ -126,10 +126,10 @@ const SolarHero = () => {
                                 <span className="relative z-10 flex items-center gap-2">
                                     Get Free Consultation <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                                 </span>
-                                <div className="absolute inset-0 bg-linear-to-r from-orange-600 to-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+                                <div className="absolute inset-0 bg-linear-to-r from-green-800 to-green-500 opacity-0 group-hover:opacity-100 transition-opacity" />
                             </button>
 
-                            <button className="px-8 py-5 rounded-2xl border-2 border-slate-200 font-bold text-slate-700 bg-white hover:bg-slate-50 transition-colors">
+                            <button className="px-8 py-5 rounded-2xl border-2 border-slate-200 font-bold text-slate-700 bg-white hover:bg-slate-50 transition-colors hover:border-orange-500">
                                 Check Availability
                             </button>
                         </motion.div>
@@ -139,7 +139,7 @@ const SolarHero = () => {
                     {/* --- RIGHT CONTENT: PREMIUM SOLAR VISUAL --- */}
                     <motion.div
                         variants={itemVariants}
-                        className="lg:col-span-4 relative h-140 flex items-center justify-center"
+                        className="lg:col-span-5 px-10 relative h-140 flex items-center justify-center"
                     >
                         <div className="relative w-full max-w-xl mt-15">
 
@@ -201,13 +201,13 @@ const SolarHero = () => {
                                     transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                                     className="relative bg-linear-to-br from-yellow-400 via-orange-400 to-orange-500 p-0.5 rounded-[2.6rem] shadow-[0_30px_80px_-20px_rgba(251,191,36,0.6)]"
                                 >
-                                    <div className="relative bg-white rounded-[2.4rem] px-8 py-7 text-center overflow-hidden">
+                                    <div className="relative bg-white rounded-[2.4rem] px-2 py-2 text-center overflow-hidden">
 
                                         {/* SUN RAYS SHIMMER */}
                                         <motion.div
                                             animate={{ x: ["-120%", "120%"] }}
                                             transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
-                                            className="absolute top-0 left-0 w-full h-full bg-linear-to-r from-transparent via-yellow-200/40 to-transparent rotate-12"
+                                            className="absolute top-0 left-0 w-full h-full bg-linear-to-r from-transparent via-yellow-200/40 to-transparent rotate-50"
                                         />
 
                                         {/* ICON */}
@@ -223,35 +223,34 @@ const SolarHero = () => {
                                         <p className="relative z-10 text-[9px] uppercase font-bold tracking-[0.25em] text-slate-500">
                                             Official Channel Partner
                                         </p>
-                                        <p className="relative z-10 text-xl font-black text-slate-900 tracking-tight">
-                                            Adani Solar
+                                        <p className="relative z-10 ">
+                                            <img
+                                                src="https://www.pngall.com/wp-content/uploads/13/Adani-Green-Energy-PNG-Image.png"
+                                                alt="Official Channel Partner"
+                                                className=" h-15 w-20 mx-auto object-center"
+                                            />
                                         </p>
                                     </div>
                                 </motion.div>
                             </motion.div>
 
 
-                            {/* ENHANCED WARRANTY SEAL WITH GLOW */}
-                            <motion.div
-
-                                transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
-                                className="absolute -top-11 -left-10 z-20 w-40 h-40"
-                            >
+                            {/* FIXED WARRANTY SEAL – ROTATE ONLY */}
+                            <div className="absolute -top-9 -left-9 z-50 w-40 h-40">
                                 <motion.div
-                                    animate={{
-                                        filter: [
-                                            'drop-shadow(0 0 10px rgba(253, 224, 71, 0.3))',
-                                            'drop-shadow(0 0 25px rgba(251, 191, 36, 0.6))',
-                                            'drop-shadow(0 0 10px rgba(253, 224, 71, 0.3))'
-                                        ]
-                                    }}
-                                    transition={{ duration: 3, repeat: Infinity }}
+                                    className="relative w-full h-full"
+                                    animate={{ rotate: 360 }}
+                                    transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
+                                    style={{ transformOrigin: "50% 50%" }}
                                 >
-                                    <svg className="w-full h-full" viewBox="0 0 120 120">
+                                    <svg
+                                        className="w-full h-full"
+                                        viewBox="0 0 120 120"
+                                    >
                                         <defs>
                                             <linearGradient id="sealGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                                <stop offset="0%" style={{ stopColor: '#fbbf24', stopOpacity: 1 }} />
-                                                <stop offset="100%" style={{ stopColor: '#f59e0b', stopOpacity: 1 }} />
+                                                <stop offset="0%" stopColor="#fbbf24" />
+                                                <stop offset="100%" stopColor="#f59e0b" />
                                             </linearGradient>
                                         </defs>
 
@@ -260,20 +259,25 @@ const SolarHero = () => {
                                             d="M 60,60 m -48,0 a 48,48 0 1,1 96,0 a 48,48 0 1,1 -96,0"
                                             fill="none"
                                         />
-                                        <motion.text
-                                            animate={{ rotate: 360 }}
-                                            transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
-                                            className="text-[10px]  uppercase font-bold fill-orange-500 tracking-widest">
+
+                                        <text
+                                            className="text-[10px] uppercase font-bold fill-orange-500 tracking-widest"
+                                        >
                                             <textPath href="#circlePath">
-                                                25 Year Warranty • 99.9% Uptime •
+                                                25-Year Warranty • 99.9% Uptime • Trusted Across 500+ Installations
                                             </textPath>
-                                        </motion.text>
+                                        </text>
                                     </svg>
-                                    <div className="absolute inset-0 m-auto w-16 h-16 bg-linear-to-br from-green-400 to-green-500 rounded-full flex items-center justify-center shadow-2xl">
-                                        <ShieldCheck className="text-white" size={32} />
+
+                                    {/* CENTER ICON (STATIC – NO ROTATION) */}
+                                    <div className="absolute inset-0 m-auto w-16 h-16 
+      bg-linear-to-br from-green-400 to-green-500 
+      rounded-full flex items-center justify-center shadow-2xl">
+                                        <ShieldCheck className="text-orange-500" size={32} />
                                     </div>
                                 </motion.div>
-                            </motion.div>
+                            </div>
+
 
                         </div>
                     </motion.div>
