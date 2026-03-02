@@ -1,6 +1,6 @@
 
 import { ShieldCheck, Leaf } from "lucide-react";
-import { easeInOut,  motion } from "framer-motion";
+import { easeInOut, motion } from "framer-motion";
 
 const partners = [
   {
@@ -42,9 +42,9 @@ const ChannelPartners = () => {
       whileInView="show"
       viewport={{ once: true }}
       variants={containerVariants}
-      className="bg-white py-20"
+      className="bg-white py-10"
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+      <div className="max-w-7xl z-10 mx-auto px-6 lg:px-8 text-center">
 
         {/* Heading */}
         <motion.div
