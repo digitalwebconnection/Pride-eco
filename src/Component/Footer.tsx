@@ -1,101 +1,326 @@
+'use client';
 
-import { 
-  Facebook, 
-  Twitter, 
-  Linkedin, 
-  Instagram, 
-  Mail, 
-  Phone, 
-  MapPin, 
-
+import {
+  Facebook,
+  Twitter,
+  Linkedin,
+  Instagram,
+  Mail,
+  Phone,
+  MapPin,
+  ChevronDown
 } from 'lucide-react';
-import footerlogo from "../assets/Pride-Eco.png"
+
+import { motion, AnimatePresence } from 'framer-motion';
+import footerlogo from "../assets/Pride-Eco.png";
+import { useState } from 'react';
 
 const SolarFooter = () => {
+
   const currentYear = new Date().getFullYear();
 
+  const locations = [
+    {
+      city: "Jabalpur",
+      address: "Plot No. 16, Karonda Maharajpur Transport Nagar, Jabalpur (M.P.) 482004",
+      phone: ["7880088921", "8450892445"],
+      email: "prideecomarketing@gmail.com",
+      map: "https://www.google.com/maps/search/?api=1&query=Karonda+Maharajpur+Transport+Nagar+Jabalpur"
+    },
+    {
+      city: "Rewa",
+      address: "Godown No. 3,4,5,6, Infront of Subhash Rice Mill, Umri Village, Rewa - 486006",
+      phone: ["7880088921", "9755478923"],
+      email: "prideecomarketing@gmail.com",
+      map: "https://www.google.com/maps/search/?api=1&query=Umri+Village+Rewa+486006"
+    },
+    {
+      city: "Indore",
+      address: "25, Sarvsuvidha Nagar, Behind Aadarsh Shishu Vihar, Indore - 452016",
+      phone: ["9755958924"],
+      email: "shivam.prideecotrade@gmail.com",
+      map: "https://www.google.com/maps/search/?api=1&query=Sarvsuvidha+Nagar+Indore"
+    },
+    {
+      city: "Bhandara",
+      address: "Near Shree Ganesh Traders, Mahatma Phule Colony, Bhandara Nagpur Highway, Bhojapur, Bhandara Maharashtra - 441904",
+      phone: ["7880088921", "8450892445"],
+      email: "prideecomarketing@gmail.com",
+      map: "https://www.google.com/maps/search/?api=1&query=Bhandara+Nagpur+Highway+Bhojapur"
+    }
+  ];
+
+  const [active, setActive] = useState<number | null>(null);
+
+  const toggleLocation = (index: number) => {
+    setActive(active === index ? null : index);
+  };
+
   return (
-    <footer className="bg-slate-950/95 text-slate-300">
-     
+    <footer className="bg-slate-950 text-slate-300 relative overflow-hidden">
 
-      {/* Main Footer Content */}
-      <div className="container mx-auto px-6 lg:px-12 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          
-          {/* Brand Column */}
-          <div className="space-y-6">
-            <div className="flex items-center space-x-2">
-              <img src={footerlogo} alt="Pride Eco Logo" className="h-12 w-auto" />
+      {/* Glow Background */}
+      <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-emerald-500/5 blur-[120px] rounded-full" />
+
+      <div className="container mx-auto px-6 lg:px-0 py-10 relative z-10">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+{/* Brand */}
+<div className="space-y-6">
+
+  <motion.img
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    src={footerlogo}
+    alt="Pride Eco Logo"
+    className="h-14 w-auto object-contain"
+  />
+
+  {/* Tagline */}
+  <div className="space-y-2">
+
+    <p className="text-sm font-semibold text-white">
+      Pride Eco Trade LLP
+    </p>
+
+    <p className="text-sm text-emerald-400 font-medium">
+      Empowering India’s Solar Future
+    </p>
+
+  </div>
+
+  {/* Partner Information */}
+  <div className="text-xs text-slate-400 space-y-1 leading-relaxed">
+
+    <p>
+      Authorized Channel Partner of 
+      <span className="text-emerald-400"> Adani Solar</span>
+    </p>
+
+    <p>
+      Distribution Partner – 
+      <span className="text-emerald-400"> Microtek Solar Inverters</span>
+    </p>
+
+  </div>
+
+  {/* Social Icons */}
+  <div className="flex space-x-5">
+    {[Facebook, Twitter, Linkedin, Instagram].map((Icon, i) => (
+      <motion.a
+        key={i}
+        whileHover={{ y: -3, scale: 1.1 }}
+        href="#"
+        className="bg-slate-900 p-2.5 rounded-lg hover:text-emerald-400 hover:bg-slate-800 transition-all border border-slate-800"
+      >
+        <Icon size={18} />
+      </motion.a>
+    ))}
+  </div>
+
+</div>
+
+          {/* Solutions */}
+          <div>
+            <h4 className="text-white font-bold mb-8 uppercase text-xs tracking-[0.2em]">
+              Solutions
+            </h4>
+
+            <ul className="space-y-4 text-sm">
+              {[
+                "Solar PV Modules",
+                "Solar Inverters",
+                "Solar EPC Projects",
+                "Commercial Solar",
+                "Industrial Solar"
+              ].map((item) => (
+                <li key={item}>
+                  <a href="#" className="hover:text-emerald-400 transition-colors flex items-center group">
+                    <span className="w-0 group-hover:w-2 h-px bg-emerald-400 mr-0 group-hover:mr-2 transition-all opacity-0 group-hover:opacity-100" />
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Support */}
+          <div>
+            <h4 className="text-white font-bold mb-8 uppercase text-xs tracking-[0.2em]">
+              Support
+            </h4>
+
+            <ul className="space-y-4 text-sm">
+              {[
+                "Solar Consultation",
+                "EPC Partnership",
+                "Logistics Support",
+                "Privacy Policy",
+                "Terms of Service"
+              ].map((item) => (
+                <li key={item}>
+                  <a href="#" className="hover:text-emerald-400 transition-colors flex items-center group">
+                    <span className="w-0 group-hover:w-2 h-px bg-emerald-400 mr-0 group-hover:mr-2 transition-all opacity-0 group-hover:opacity-100" />
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Locations Accordion */}
+          <div>
+
+            <h4 className="text-white font-bold mb-4 uppercase text-xs tracking-[0.2em]">
+              Our Locations
+            </h4>
+
+            <div className="space-y-2">
+
+              {locations.map((loc, index) => {
+
+                const isOpen = active === index;
+
+                return (
+                  <div
+                    key={index}
+                    className={`border rounded-xl overflow-hidden transition ${
+                      isOpen
+                        ? "border-emerald-500/50 bg-slate-900/40"
+                        : "border-slate-800"
+                    }`}
+                  >
+
+                    {/* City Header */}
+                    <button
+                      onClick={() => toggleLocation(index)}
+                      className="w-full flex items-center justify-between px-5 py-2 text-left"
+                    >
+                      <span className={`text-sm font-semibold ${
+                        isOpen ? "text-emerald-400" : "text-slate-200"
+                      }`}>
+                        {loc.city}
+                      </span>
+
+                      <motion.div
+                        animate={{ rotate: isOpen ? 180 : 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <ChevronDown size={18} />
+                      </motion.div>
+                    </button>
+
+                    {/* Location Details */}
+                    <AnimatePresence>
+
+                      {isOpen && (
+
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.4 }}
+                        >
+
+                          <div className="px-5 pb-5 pt-1 space-y-2 text-sm text-slate-400 border-t border-slate-800">
+
+                            {/* Address */}
+                            <div className="flex items-start gap-3">
+
+                              <MapPin size={26} className="text-emerald-500 mt-1" />
+
+                              <a
+                                href={loc.map}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:text-emerald-400 transition"
+                              >
+                                {loc.address}
+                              </a>
+
+                            </div>
+
+                            {/* Phone */}
+                            <div className="flex items-center gap-3 flex-wrap">
+
+                              <Phone size={16} className="text-emerald-500" />
+
+                              {loc.phone.map((num, i) => (
+                                <a
+                                  key={i}
+                                  href={`tel:${num}`}
+                                  className="hover:text-emerald-400 transition"
+                                >
+                                  {num}{i < loc.phone.length - 1 ? ", " : ""}
+                                </a>
+                              ))}
+
+                            </div>
+
+                            {/* Email */}
+                            <div className="flex items-center gap-3">
+
+                              <Mail size={16} className="text-emerald-500" />
+
+                              <a
+                                href={`mailto:${loc.email}`}
+                                className="hover:text-emerald-400 transition"
+                              >
+                                {loc.email}
+                              </a>
+
+                            </div>
+
+                          </div>
+
+                        </motion.div>
+
+                      )}
+
+                    </AnimatePresence>
+
+                  </div>
+                );
+              })}
+
             </div>
-            <p className="text-sm leading-relaxed text-slate-400">
-              India's leading Solar EPC provider specializing in high-efficiency PV systems for residential and industrial sectors. MNRE approved and ISO certified.
-            </p>
-            <div className="flex space-x-4">
-              <a href="#" className="hover:text-emerald-500 transition-colors"><Facebook size={20} /></a>
-              <a href="#" className="hover:text-emerald-500 transition-colors"><Twitter size={20} /></a>
-              <a href="#" className="hover:text-emerald-500 transition-colors"><Linkedin size={20} /></a>
-              <a href="#" className="hover:text-emerald-500 transition-colors"><Instagram size={20} /></a>
-            </div>
+
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-white font-bold mb-6 uppercase text-sm tracking-widest">Solutions</h4>
-            <ul className="space-y-4 text-sm">
-              <li><a href="#" className="hover:text-emerald-500 transition-colors">Residential Solar</a></li>
-              <li><a href="#" className="hover:text-emerald-500 transition-colors">Commercial Rooftops</a></li>
-              <li><a href="#" className="hover:text-emerald-500 transition-colors">Industrial EPC</a></li>
-              <li><a href="#" className="hover:text-emerald-500 transition-colors">Solar Water Pumps</a></li>
-              <li><a href="#" className="hover:text-emerald-500 transition-colors">AMC & Maintenance</a></li>
-            </ul>
-          </div>
-
-          {/* Support Links */}
-          <div>
-            <h4 className="text-white font-bold mb-6 uppercase text-sm tracking-widest">Support</h4>
-            <ul className="space-y-4 text-sm">
-              <li><a href="#" className="hover:text-emerald-500 transition-colors">Net Metering Guide</a></li>
-              <li><a href="#" className="hover:text-emerald-500 transition-colors">Subsidy Information</a></li>
-              <li><a href="#" className="hover:text-emerald-500 transition-colors">Solar ROI Calculator</a></li>
-              <li><a href="#" className="hover:text-emerald-500 transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-emerald-500 transition-colors">Terms of Service</a></li>
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h4 className="text-white font-bold mb-6 uppercase text-sm tracking-widest">Contact Us</h4>
-            <ul className="space-y-4 text-sm">
-              <li className="flex items-start">
-                <MapPin className="mr-3 text-emerald-500 shrink-0" size={18} />
-                <span>petrol pump, Maharajpur, Jabalpur, GCF Jabalpur, Madhya Pradesh 482004</span>
-              </li>
-              <li className="flex items-center">
-                <Phone className="mr-3 text-emerald-500 shrink-0" size={18} />
-                <span>+91 78800 88921</span>
-              </li>
-              <li className="flex items-center">
-                <Mail className="mr-3 text-emerald-500 shrink-0" size={18} />
-                <span>prideecomarketing@gmail.com</span>
-              </li>
-            </ul>
-          </div>
         </div>
+
       </div>
 
       {/* Bottom Bar */}
-      <div className="bg-slate-950 py-6">
-        <div className="container mx-auto max-w-7xl px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-slate-500 ">
-          <p className='text-sm'>© {currentYear} Pride eco Trade Pvt Ltd. All rights reserved.</p>
+
+      <div className="border-t border-slate-900 py-6">
+
+        <div className="max-w-7xl mx-auto px-6 lg:px-0 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+
+          <p>
+            © {currentYear} Pride Eco Trade LLP. All rights reserved.
+          </p>
+
           <div className="flex items-center space-x-6">
+
             <span>Made with ☀️ in India</span>
+
             <div className="flex items-center gap-2">
+
               <div className="w-2 h-2 rounded-full bg-emerald-500"></div>
-              <span className="text-emerald-500">Grid Online</span>
+
+              <span className="text-emerald-500">
+                Solar Powered Future
+              </span>
+
             </div>
+
           </div>
+
         </div>
+
       </div>
+
     </footer>
   );
 };

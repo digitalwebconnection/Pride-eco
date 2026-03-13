@@ -1,9 +1,13 @@
+import BusinessVerticals from "./BusinessVerticals"
 import ChannelPartners from "./ChannelPatner"
+import CompanyHighlights from "./CompanyHighlights"
 import CompanyOverview from "./CompanyOverview"
 import FAQSection from "./FAQSection"
 import SolarHero from "./Herohm"
+import Leadership from "./Leadership"
 import Scroll from "./Scrooling"
 import Testimonials from "./Testimonials"
+import WhyChooseSection from "./WhyChooseSection"
 
 
 const HomeMain = () => {
@@ -11,8 +15,12 @@ const HomeMain = () => {
         <>
             <SolarHero />
             <CompanyOverview />
+            <CompanyHighlights />
             <ChannelPartners />
-            <Scroll/>
+            <BusinessVerticals />
+            <Scroll />
+            <WhyChooseSection />
+            <Leadership/>
             <Testimonials />
             <FAQSection />
         </>

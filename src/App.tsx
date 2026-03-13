@@ -1,4 +1,5 @@
 import './App.css'
+import ContactPage from './Component/Contactus/Contactus'
 import SolarFooter from './Component/Footer'
 import Header from './Component/Header'
 import HomeMain from './Component/Home/HomeMain'
@@ -19,7 +20,7 @@ function App() {
           {/* <Route path='/services' element={<Services />} /> */}
           {/* <Route path='/careers' element={<Careers />} /> */}
           {/* <Route path='/blog' element={<Blog />} /> */}
-          {/* <Route path='/contact' element={<Contact />} /> */}
+          <Route path='/contact' element={<ContactPage />} />
         </Routes>
       </div>
 

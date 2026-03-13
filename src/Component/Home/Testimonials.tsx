@@ -80,7 +80,7 @@ const Testimonials = () => {
             className="flex gap-8"
             animate={{ x: ["0%", "-33.333%"] }}
             transition={{
-              duration: 35,
+              duration: 5,
               repeat: Infinity,
               ease: "linear",
             }}

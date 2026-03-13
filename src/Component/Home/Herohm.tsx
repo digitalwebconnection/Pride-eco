@@ -14,42 +14,46 @@ interface Slide {
 
 const slides: Slide[] = [
   {
-    topBadge: "25-Year Performance Warranty",
-    normal: "Long-Term Energy",
-    highlight: "With Prideeco.",
-    desc: "Reliable solar technology engineered for 25+ years of peak output performance.",
-    bottomTitle: "Guaranteed Output",
-    bottomSubtitle: "99.9% Uptime",
+    topBadge: "Renewable Energy Solutions",
+    normal: "Powering India’s",
+    highlight: "Solar Future",
+    desc:
+      "Pride Eco Trade LLP is a renewable energy company delivering reliable solar products and EPC solutions across India. As an Authorized Channel Partner of Adani Solar and Distribution Partner of Microtek, we provide complete solar system solutions.",
+    bottomTitle: "Solar Solutions",
+    bottomSubtitle: "Solar PV Modules • Solar Inverters & BOS Products • End-to-End Solar EPC Services",
     image:
       "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2070&auto=format&fit=crop"
   },
   {
-    topBadge: "Official Adani Channel Partner",
-    normal: "The Future is",
-    highlight: "Adani Solar.",
-    desc: "Slash electricity bills by 90% using advanced Mono-PERC modules.",
-    bottomTitle: "Official Partner",
-    bottomSubtitle: "Adani Solar",
+    topBadge: "Trusted Solar Supply Partner",
+    normal: "Complete Solar Supply",
+    highlight: "& EPC Solutions",
+    desc:
+      "From solar modules to inverters and complete balance-of-system components, Pride Eco Trade supports solar installers, EPC companies, and businesses with dependable solar equipment and professional EPC execution.",
+    bottomTitle: "Trusted Equipment",
+    bottomSubtitle: "Premium Solar PV Modules from Adani Solar • Reliable Solar Inverters from Microtek • Complete BOS Products",
     image:
       "https://img.freepik.com/free-photo/solar-panels-roof-solar-cell_335224-1324.jpg?semt=ais_rp_progressive&w=740&q=80"
   },
   {
-    topBadge: "Industrial Solar Solutions",
-    normal: "Power Your",
-    highlight: "Factory Smarter.",
-    desc: "Reduce operational costs and improve ESG ratings with megawatt solar systems.",
-    bottomTitle: "Large Scale",
-    bottomSubtitle: "500+ Projects",
+    topBadge: "Solar EPC Services",
+    normal: "End-to-End",
+    highlight: "Solar EPC Services",
+    desc:
+      "Pride Eco Trade is actively delivering solar EPC solutions for residential, commercial, and industrial projects with a focus on quality engineering, reliable components, and long-term performance.",
+    bottomTitle: "Solar Installations",
+    bottomSubtitle: "Residential Solar Systems • Commercial & Industrial Solar Plants • Professional Project Execution",
     image:
       "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=1975&auto=format&fit=crop"
   },
   {
-    topBadge: "Government Subsidy Ready",
-    normal: "Maximize Savings With",
-    highlight: "Subsidy.",
-    desc: "Approved installations with seamless subsidy documentation process.",
-    bottomTitle: "Govt Approved",
-    bottomSubtitle: "Subsidy Eligible",
+    topBadge: "Supporting India’s Solar Growth",
+    normal: "100 MW+ Solar",
+    highlight: "Capacity Delivered",
+    desc:
+      "With over 100 MW of solar capacity supplied and installed, Pride Eco Trade is contributing to India’s renewable energy transition through strong EPC partnerships and reliable product distribution.",
+    bottomTitle: "Nationwide Network",
+    bottomSubtitle: "Strong EPC Network • Reliable Supply Chain • Multi-location Warehousing",
     image:
       "https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=80&w=2070&auto=format&fit=crop"
   }
@@ -71,7 +75,7 @@ const SolarHero = () => {
   return (
     <section
      
-      className="relative py-20 w-full overflow-hidden"
+      className="relative py-20 h-screen w-full overflow-hidden"
     >
       {/* BACKGROUND IMAGE SLIDER */}
       <AnimatePresence mode="wait">

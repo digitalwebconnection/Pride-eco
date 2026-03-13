@@ -5,7 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 const BASE_DURATION = 28;
 
 export default function ProductScroll() {
-    const [prefersReducedMotion, setPRM] = useState(false);
+    const [ prefersReducedMotion, setPRM] = useState(false);
     const [isSmall, setIsSmall] = useState(false);
 
     useEffect(() => {
@@ -27,7 +27,7 @@ export default function ProductScroll() {
     const duration = prefersReducedMotion ? 0 : Math.max(10, BASE_DURATION - (isSmall ? 8 : 0));
 
     return (
-        <main className="w-full bg-slate-50 py-6">
+        <main className="w-full bg-slate-50 py-4">
             <div className="mx-auto max-w-7xl px-4 sm:px-0">
                 <header className="mb-6 text-center">
                     <span className="text-green-600 font-bold tracking-widest uppercase text-xs mb-2 block">
@@ -36,8 +36,8 @@ export default function ProductScroll() {
                     <h2 className="text-3xl sm:text-4xl font-black text-slate-900">
                         Premium Solar Components
                     </h2>
-                    <p className="mt-3 text-slate-600 max-w-2xl mx-auto">
-                        We use industry-leading Tier-1 modules and high-efficiency power electronics 
+                    <p className="mt-3 text-slate-600 max-w-4xl mx-auto">
+                        We use industry-leading Tier-1 modules and high-efficiency power electronics
                         to ensure your plant performs for 25+ years.
                     </p>
                 </header>
@@ -45,9 +45,9 @@ export default function ProductScroll() {
                 <section aria-label="Product Marquee" className="relative group">
                     {/* Glassmorphism Container */}
                     <div className="rounded-3xl bg-white/40 p-4 backdrop-blur-md  overflow-hidden">
-                        <div className="relative overflow-hidden py-4">
+                        <div className="relative overflow-hidden py-2">
                             <Marquee prefersReducedMotion={prefersReducedMotion} duration={duration} />
-                            
+
                             {/* Improved Edge Fades */}
                             <div className="pointer-events-none absolute inset-y-0 left-0 w-20 sm:w-32 bg-linear-to-r from-white via-white/80 to-transparent z-10" />
                             <div className="pointer-events-none absolute inset-y-0 right-0 w-20 sm:w-32 bg-linear-to-l from-white via-white/80 to-transparent z-10" />
@@ -79,7 +79,7 @@ function Marquee({ prefersReducedMotion, duration }: { prefersReducedMotion: boo
         { label: "Smart Inverters", src: "https://png.pngtree.com/png-vector/20240730/ourmid/pngtree-choosing-the-right-solar-power-inverter-for-your-system-png-image_13291828.png", alt: "Inverters" },
         { label: "ACDB Protection", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdYWeOFM0wkT3AS4811uCPmzGRNQ5h6jqKjg&s", alt: "ACDB" },
         { label: "DCDB Enclosures", src: "https://cpimg.tistatic.com/9819920/b/4/solar-dcdb-box.png", alt: "DCDB" },
-        { label: "Lithium Storage", src: "https://solarmartindia.com/wp-content/uploads/2025/04/Untitled-design-61.png", alt: "Battery" },
+        { label: "Lithium Storage", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcFj-QiurNv8WDP1MHNLdkIs2kCXOazanySA&s", alt: "Battery" },
         { label: "Structure Mounts", src: "https://5.imimg.com/data5/SELLER/Default/2024/8/443630910/JH/QY/GX/124228058/liberty-370-250x250.jpg", alt: "Mounts" },
         { label: "Safety Earthing", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMqWRVCWcIeH8ehBt2nFzP18EVFHNM5mJcOQ&s", alt: "Earthing" },
     ];
@@ -120,7 +120,7 @@ function ProductCard({ item }: { item: { src: string; alt: string; label: string
                     decoding="async"
                 />
             </div>
-        
+
         </div>
     );
 }
