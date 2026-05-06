@@ -46,19 +46,19 @@ const AboutPrideEco = () => {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            className="py-5"
+            className="py-5 text-justify"
             viewport={{ once: true }}
           >
 
             <motion.p
               variants={itemVariants}
-              className="text-slate-600 mt-6 text-lg leading-relaxed"
+              className="text-slate-600  mt-6 text-lg leading-relaxed"
             >
               <strong>Pride Eco Trade LLP</strong> is a renewable energy solutions company
               focused on accelerating the adoption of solar energy in India.
               Established in <strong>2024</strong>, the company is driven by a team
-              that collectively brings <strong>more than 10 years of experience</strong>
-              across renewable energy, infrastructure, and industrial distribution.
+              that collectively brings <strong>more than 10 years of experience </strong> 
+               across renewable energy, infrastructure, and industrial distribution.
             </motion.p>
 
             <motion.p

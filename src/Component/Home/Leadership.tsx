@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Award, Leaf, Zap, GraduationCap, ChevronRight } from "lucide-react";
 
+
 const Leadership = () => {
   return (
     <section className="relative py-32 bg-slate-50 overflow-hidden">
@@ -33,12 +34,12 @@ const Leadership = () => {
               className="relative z-10"
             >
               {/* Decorative Frame Element */}
-              <div className="absolute -inset-2 border-2 border-green-500/60 rounded-[2.5rem] -rotate-12 -z-10" />
+              <div className="absolute -inset-2 border-4 border-green-500/60 rounded-[2.5rem] -rotate-12 -z-10" />
               
               <div className="rounded-4xl overflow-hidden shadow-2xl border-8 border-white">
                 <img
-                  src="https://media.licdn.com/dms/image/v2/D4E03AQFMLBwrlxgRrA/profile-displayphoto-scale_200_200/B4EZiEahP2GcAk-/0/1754568202391?e=2147483647&v=beta&t=4yhn4297SS-EXZdjrlFk0tQcr1QjkMrBeEGpv3B-8Uw"
-                  className="w-full h-125 object-cover hover:scale-105 transition-transform duration-700"
+                  src="/shiva-sir.jpeg"
+                  className="w-full h-145 object-cover hover:scale-105 transition-transform duration-700"
                 />
               </div>
 

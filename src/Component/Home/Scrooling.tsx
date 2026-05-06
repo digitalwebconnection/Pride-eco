@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 
-const BASE_DURATION = 28;
+const BASE_DURATION = 60;
 
 export default function ProductScroll() {
     const [ prefersReducedMotion, setPRM] = useState(false);
