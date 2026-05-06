@@ -30,10 +30,10 @@ const AboutPrideEco = () => {
       </motion.span>
       <motion.h2
         variants={itemVariants}
-        className="text-3xl lg:text-4xl text-center  font-bold text-slate-900 leading-tight"
+        className="text-3xl lg:text-5xl text-center  font-bold text-slate-900 leading-tight"
       >
-        Driving India's Solar Energy
-        <span className="text-green-600"> Distribution & EPC Growth</span>
+        Driving India's Solar Energy <br />
+        <span className="text-green-600 text-3xl lg:text-4xl"> Distribution & EPC Growth</span>
       </motion.h2>
       {/* Decorative Background */}
       <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-96 h-96 bg-green-100 rounded-full blur-3xl opacity-50" />
