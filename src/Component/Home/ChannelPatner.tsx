@@ -54,7 +54,7 @@ const ChannelPartners = () => {
           viewport={{ once: true }}
           className="mb-14"
         >
-          <h2 className="text-4xl font-bold text-gray-900">
+          <h2 className="font-serif text-4xl font-bold text-gray-900">
             Our Company Partners
           </h2>
           <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
@@ -99,7 +99,7 @@ const ChannelPartners = () => {
               </motion.div>
 
               {/* Content */}
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              <h3 className="font-serif text-xl font-semibold text-gray-900 mb-3">
                 {partner.name}
               </h3>
               <p className="text-gray-600 mb-5">

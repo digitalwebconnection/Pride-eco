@@ -93,7 +93,7 @@ const CompanyHighlights = () => {
           <motion.h2
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-bold text-slate-900"
+            className="font-serif text-4xl md:text-5xl font-bold text-slate-900"
           >
             Key Company Highlights
           </motion.h2>
@@ -141,7 +141,7 @@ const CompanyHighlights = () => {
               </div>
 
               {/* Title */}
-              <h4 className="font-semibold text-slate-800 mb-2">
+              <h4 className="font-serif font-semibold text-slate-800 mb-2">
                 {data.title}
               </h4>
 

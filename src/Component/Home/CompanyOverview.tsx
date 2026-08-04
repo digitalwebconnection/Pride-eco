@@ -1,10 +1,14 @@
 'use client';
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import solar1 from '../../assets/images/solar-1.webp';
+import ContactPopup from "../ContactPopup";
 
 const AboutPrideEco = () => {
 
+  const [isContactPopupOpen, setIsContactPopupOpen] = useState(false);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -30,7 +34,7 @@ const AboutPrideEco = () => {
       </motion.span>
       <motion.h2
         variants={itemVariants}
-        className="text-3xl lg:text-5xl text-center  font-bold text-slate-900 leading-tight"
+        className="font-serif text-3xl lg:text-5xl text-center  font-bold text-slate-900 leading-tight"
       >
         Driving India's Solar Energy <br />
         <span className="text-green-600 text-3xl lg:text-4xl"> Distribution & EPC Growth</span>
@@ -102,15 +106,15 @@ const AboutPrideEco = () => {
 
             {/* CTA */}
             <motion.div variants={itemVariants}>
-              <motion.a
+              <motion.button
+                onClick={() => setIsContactPopupOpen(true)}
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                href="#contact"
-                className="inline-flex items-center gap-2 mt-6 px-8 py-4 bg-green-600 text-white font-bold rounded-xl shadow-lg shadow-green-200 hover:bg-green-700 transition-all"
+                className="inline-flex items-center gap-2 mt-6 px-8 py-4 bg-green-600 text-white font-bold rounded-xl shadow-lg shadow-green-200 hover:bg-green-700 transition-all cursor-pointer border-none"
               >
                 Partner With Us
                 <ArrowUpRight size={20} />
-              </motion.a>
+              </motion.button>
             </motion.div>
 
           </motion.div>
@@ -125,12 +129,10 @@ const AboutPrideEco = () => {
           >
 
             <div className="rounded-3xl overflow-hidden shadow-2xl group">
-              <motion.img
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.6 }}
-                src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2070&auto=format&fit=crop"
-                alt="Solar installation"
-                className="w-full h-full object-cover"
+              <img
+                src={solar1}
+                alt="Company Overview"
+                className="w-full h-full object-cover transform hover:scale-105 transition duration-700"
               />
             </div>
 
@@ -151,6 +153,8 @@ const AboutPrideEco = () => {
 
         </div>
       </div>
+
+      <ContactPopup isOpen={isContactPopupOpen} onClose={() => setIsContactPopupOpen(false)} />
     </section>
   );
 };

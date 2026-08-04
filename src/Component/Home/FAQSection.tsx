@@ -45,7 +45,7 @@ const FAQSection = () => {
           viewport={{ once: true }}
           className="text-center mb-14"
         >
-          <h2 className="text-4xl font-bold text-gray-900">
+          <h2 className="font-serif text-4xl font-bold text-gray-900">
             Frequently Asked Questions
           </h2>
           <p className="mt-4 text-lg text-gray-600">
@@ -99,21 +99,7 @@ const FAQSection = () => {
           ))}
         </div>
 
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
-          className="text-center mt-14"
-        >
-          <p className="text-gray-600 mb-4">
-            Still have questions?
-          </p>
-          <button className="inline-flex items-center gap-2 bg-green-600 text-white px-8 py-3 rounded-full font-medium hover:bg-green-700 transition">
-            Talk to a Solar Expert
-          </button>
-        </motion.div>
+        
       </div>
     </section>
   );

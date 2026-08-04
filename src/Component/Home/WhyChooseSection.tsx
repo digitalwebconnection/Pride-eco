@@ -40,10 +40,10 @@ const WhyChooseSection = () => {
   return (
     <section className="py-14 bg-slate-50/50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-0">
-        
+
         {/* Header Logic from Image */}
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900">
+          <h2 className="font-serif text-4xl md:text-5xl font-bold text-slate-900">
             Our <span className="text-green-600">Core Strengths</span>
           </h2>
           <p className="text-slate-500 mt-6 max-w-4xl mx-auto leading-relaxed">
@@ -63,24 +63,21 @@ const WhyChooseSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`relative flex items-center w-full max-w-6xl mx-auto ${
-                  isEven ? "justify-start" : "justify-end"
-                }`}
+                className={`relative flex items-center w-full max-w-6xl mx-auto ${isEven ? "justify-start" : "justify-end"
+                  }`}
               >
-            
+
 
                 <div className="relative w-full md:w-[80%] bg-white border border-slate-400 rounded-2xl p-8 md:p-8 shadow-sm hover:shadow-xl transition-shadow duration-500">
-                  
-                  <div className={`flex flex-col md:flex-row items-center gap-8 ${
-                    isEven ? "md:flex-row " : "md:flex-row-reverse text-right ms-10"
-                  }`}>
-                    
-                    {/* The "Popped Out" Icon Container */}
-                    <div className={`shrink-0 w-24 h-24 rounded-full bg-linear-to-br from-green-500 to-green-700 p-0.5 shadow-lg transform transition-transform group-hover:scale-110 ${
-                       isEven 
-                       ? "md:absolute -right-12 top-1/2 -translate-y-1/2" 
-                       : "md:absolute -left-12 top-1/2 -translate-y-1/2"
+
+                  <div className={`flex flex-col md:flex-row items-center gap-8 ${isEven ? "md:flex-row " : "md:flex-row-reverse text-right ms-10"
                     }`}>
+
+                    {/* The "Popped Out" Icon Container */}
+                    <div className={`shrink-0 w-24 h-24 rounded-full bg-linear-to-br from-green-500 to-green-700 p-0.5 shadow-lg transform transition-transform group-hover:scale-110 ${isEven
+                        ? "md:absolute -right-12 top-1/2 -translate-y-1/2"
+                        : "md:absolute -left-12 top-1/2 -translate-y-1/2"
+                      }`}>
                       <div className="w-full h-full rounded-full bg-white flex items-center justify-center border-4 border-slate-50">
                         <item.icon size={36} className="text-green-600" />
                       </div>
@@ -88,7 +85,7 @@ const WhyChooseSection = () => {
 
                     {/* Content */}
                     <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-green-600 mb-4">
+                      <h3 className="font-serif text-2xl font-bold text-green-600 mb-4">
                         {item.title}
                       </h3>
                       <p className="text-slate-600 leading-relaxed text-base  md:text-lg ">

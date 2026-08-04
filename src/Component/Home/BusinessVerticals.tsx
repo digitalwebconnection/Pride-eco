@@ -40,7 +40,7 @@ const BusinessVerticals = () => {
     };
 
     return (
-        <section className="py-8 bg-slate-950 text-white relative overflow-hidden">
+        <section className="py-8 bg-slate-950 text-white px-4 relative overflow-hidden">
             {/* Animated Background Gradients */}
             <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
                 <motion.div
@@ -70,7 +70,7 @@ const BusinessVerticals = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4">
+                        <h2 className="font-serif text-4xl md:text-6xl font-extrabold tracking-tight mb-4">
                             Our Business <span className="text-green-500 text-glow">Verticals</span>
                         </h2>
 
@@ -113,7 +113,7 @@ const BusinessVerticals = () => {
                                 <div className="p-4 bg-green-500/10 rounded-2xl border border-green-500/20 shadow-[0_0_20px_rgba(34,197,94,0.1)]">
                                     <Sun className="text-green-400" size={32} />
                                 </div>
-                                <h3 className="text-3xl font-bold">Solar Distribution</h3>
+                                <h3 className="font-serif text-3xl font-bold">Solar Distribution</h3>
                             </div>
                             <p className="text-slate-400 text-lg leading-relaxed mb-8">
                                 Premium equipment supply chain powered by a pan-India warehousing network.
@@ -146,7 +146,7 @@ const BusinessVerticals = () => {
                                 <div className="p-4 bg-orange-400/10 rounded-2xl border border-orange-400/20 shadow-[0_0_20px_rgba(59,130,246,0.1)]">
                                     <Wrench className="text-orange-400" size={32} />
                                 </div>
-                                <h3 className="text-3xl font-bold text-white">EPC Services</h3>
+                                <h3 className="font-serif text-3xl font-bold text-white">EPC Services</h3>
                             </div>
                             <p className="text-slate-400 text-lg leading-relaxed mb-4">
                                 End-to-end solar solutions from conceptual design to lifetime maintenance.

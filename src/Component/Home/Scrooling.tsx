@@ -5,7 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 const BASE_DURATION = 60;
 
 export default function ProductScroll() {
-    const [ prefersReducedMotion, setPRM] = useState(false);
+    const [prefersReducedMotion, setPRM] = useState(false);
     const [isSmall, setIsSmall] = useState(false);
 
     useEffect(() => {
@@ -33,7 +33,7 @@ export default function ProductScroll() {
                     <span className="text-green-600 font-bold tracking-widest uppercase text-xs mb-2 block">
                         Our Technology Stack
                     </span>
-                    <h2 className="text-3xl sm:text-4xl font-black text-slate-900">
+                    <h2 className="font-serif text-3xl sm:text-4xl font-black text-slate-900">
                         Premium Solar Components
                     </h2>
                     <p className="mt-3 text-slate-600 max-w-4xl mx-auto">

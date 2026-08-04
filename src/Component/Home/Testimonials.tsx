@@ -61,7 +61,7 @@ const Testimonials = () => {
             Customer Success
           </span>
 
-          <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6">
+          <h2 className="font-serif text-4xl md:text-5xl font-black text-slate-900 mb-6">
             Trusted by{" "}
             <span className="text-transparent bg-clip-text bg-linear-to-r from-green-600 to-yellow-500">
               500+ Happy Clients
@@ -135,7 +135,7 @@ const Testimonials = () => {
                     </div>
 
                     <div>
-                      <h4 className="font-bold text-slate-900 flex items-center gap-2">
+                      <h4 className="font-serif font-bold text-slate-900 flex items-center gap-2">
                         {item.name}
                         <CheckCircle
                           size={14}

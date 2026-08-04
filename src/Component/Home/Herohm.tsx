@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Sun, Award, ArrowRight, ShieldCheck, Zap } from "lucide-react";
+import ContactPopup from "../ContactPopup";
+
+import solar1 from '../../assets/images/solar-1.webp';
+import solar2 from '../../assets/images/solar-2.webp';
+import solar3 from '../../assets/images/solar-3.webp';
+import solar4 from '../../assets/images/solar-4.webp';
 
 interface Slide {
   topBadge: string;
@@ -21,8 +27,7 @@ const slides: Slide[] = [
       "Pride Eco Trade LLP is a renewable energy company delivering reliable solar products and EPC solutions across India. As an Authorized Channel Partner of Adani Solar and Distribution Partner of Microtek, we provide complete solar system solutions.",
     bottomTitle: "Solar Solutions",
     bottomSubtitle: "Solar PV Modules • Solar Inverters & BOS Products • End-to-End Solar EPC Services",
-    image:
-      "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2070&auto=format&fit=crop"
+    image: solar1
   },
   {
     topBadge: "Trusted Solar Supply Partner",
@@ -32,8 +37,7 @@ const slides: Slide[] = [
       "From solar modules to inverters and complete balance-of-system components, Pride Eco Trade supports solar installers, EPC companies, and businesses with dependable solar equipment and professional EPC execution.",
     bottomTitle: "Trusted Equipment",
     bottomSubtitle: "Premium Solar PV Modules from Adani Solar • Reliable Solar Inverters from Microtek • Complete BOS Products",
-    image:
-      "https://img.freepik.com/free-photo/solar-panels-roof-solar-cell_335224-1324.jpg?semt=ais_rp_progressive&w=740&q=80"
+    image: solar2
   },
   {
     topBadge: "Solar EPC Services",
@@ -43,8 +47,7 @@ const slides: Slide[] = [
       "Pride Eco Trade is actively delivering solar EPC solutions for residential, commercial, and industrial projects with a focus on quality engineering, reliable components, and long-term performance.",
     bottomTitle: "Solar Installations",
     bottomSubtitle: "Residential Solar Systems • Commercial & Industrial Solar Plants • Professional Project Execution",
-    image:
-      "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=1975&auto=format&fit=crop"
+    image: solar3
   },
   {
     topBadge: "Supporting India’s Solar Growth",
@@ -54,14 +57,14 @@ const slides: Slide[] = [
       "With over 100 MW of solar capacity supplied and installed, Pride Eco Trade is contributing to India’s renewable energy transition through strong EPC partnerships and reliable product distribution.",
     bottomTitle: "Nationwide Network",
     bottomSubtitle: "Strong EPC Network • Reliable Supply Chain • Multi-location Warehousing",
-    image:
-      "https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=80&w=2070&auto=format&fit=crop"
+    image: solar4
   }
 ];
 
 const SolarHero = () => {
   const [current, setCurrent] = useState(0);
   const [isHovered] = useState(false);
+  const [isContactPopupOpen, setIsContactPopupOpen] = useState(false);
 
   /* AUTO SLIDER */
   useEffect(() => {
@@ -74,8 +77,8 @@ const SolarHero = () => {
 
   return (
     <section
-     
-      className="relative py-20 h-screen w-full overflow-hidden"
+
+      className="relative pt-24 pb-10 md:pt-16 md:pb-10 min-h-[90vh] md:min-h-auto w-full overflow-hidden flex items-center"
     >
       {/* BACKGROUND IMAGE SLIDER */}
       <AnimatePresence mode="wait">
@@ -100,7 +103,7 @@ const SolarHero = () => {
       {/* TOP TRUST BAR */}
       <div className="absolute top-0 w-full z-40 bg-black/40 backdrop-blur-md text-white py-3">
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center text-xs uppercase tracking-widest font-bold">
-          <div className="flex gap-6">
+          <div className="flex gap-6 ">
             <span className="flex items-center gap-2 text-yellow-400">
               <Award size={14} /> Official Channel Partner
             </span>
@@ -116,9 +119,9 @@ const SolarHero = () => {
       </div>
 
       {/* MAIN CONTENT */}
-      <div className="relative z-30 flex items-center h-full">
-        <div className="max-w-7xl mx-auto px-0 w-full">
-          <div className="max-w-5xl">
+      <div className="relative z-30 flex items-center h-full w-full">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 w-full">
+          <div className="max-w-4xl">
 
             <AnimatePresence mode="wait">
               <motion.div
@@ -129,12 +132,12 @@ const SolarHero = () => {
                 transition={{ duration: 0.5 }}
               >
                 {/* BADGE */}
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6 text-xs font-bold uppercase tracking-widest text-yellow-400">
+                <div className=" hidden md:inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6 text-xs font-bold uppercase tracking-widest text-yellow-400">
                   {slides[current].topBadge}
                 </div>
 
                 {/* TITLE */}
-                <h1 className="text-5xl md:text-7xl font-black text-white leading-[0.95] mb-6">
+                <h1 className="font-serif text-3xl sm:text-5xl md:text-7xl font-black text-white leading-[1.1] md:leading-[0.95] mb-4 md:mb-6">
                   {slides[current].normal} <br />
                   <span className="text-transparent bg-clip-text bg-linear-to-r from-orange-400 via-yellow-300 to-orange-500">
                     {slides[current].highlight}
@@ -142,17 +145,20 @@ const SolarHero = () => {
                 </h1>
 
                 {/* DESCRIPTION */}
-                <p className="text-lg text-white/80 mb-10 max-w-xl">
+                <p className="text-base sm:text-lg text-white/80 mb-8 md:mb-10 max-w-xl">
                   {slides[current].desc}
                 </p>
 
                 {/* BUTTONS */}
                 <div className="flex gap-4 flex-wrap">
-                  <button className="px-8 py-4 rounded-xl font-bold text-white bg-orange-600 hover:bg-orange-500 transition flex items-center gap-2 shadow-xl">
+                  <button
+                    onClick={() => setIsContactPopupOpen(true)}
+                    className="px-8 py-3 rounded-xl font-bold text-white bg-orange-600 hover:bg-orange-500 transition flex items-center gap-2 shadow-xl"
+                  >
                     Get Free Consultation
                     <ArrowRight size={18} />
                   </button>
-                  <button className="px-8 py-4 hover:border-orange-500 rounded-xl border border-white/30 font-bold text-white hover:bg-white/10 transition">
+                  <button className="px-8 py-3 hover:border-orange-500 rounded-xl border border-white/30 font-bold text-white hover:bg-white/10 transition">
                     View Projects
                   </button>
                 </div>
@@ -177,17 +183,9 @@ const SolarHero = () => {
         </div>
       </div>
 
-      {/* SLIDER DOTS */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-40 flex gap-3">
-        {slides.map((_, idx) => (
-          <button
-            key={idx}
-            onClick={() => setCurrent(idx)}
-            className={`h-2 rounded-full transition-all duration-500 ${current === idx ? "w-10 bg-white" : "w-4 bg-white/40"
-              }`}
-          />
-        ))}
-      </div>
+
+
+      <ContactPopup isOpen={isContactPopupOpen} onClose={() => setIsContactPopupOpen(false)} />
     </section>
   );
 };

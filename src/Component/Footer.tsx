@@ -1,19 +1,18 @@
-'use client';
-
 import {
   Facebook,
-  Twitter,
   Linkedin,
   Instagram,
   Mail,
   Phone,
   MapPin,
-  ChevronDown
+  ChevronDown,
+  Code2
 } from 'lucide-react';
 
 import { motion, AnimatePresence } from 'framer-motion';
-import footerlogo from "../assets/Pride-Eco.png";
+import footerlogo from "../assets/Pride-Eco.webp";
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const SolarFooter = () => {
 
@@ -23,28 +22,28 @@ const SolarFooter = () => {
     {
       city: "Jabalpur",
       address: "Plot No. 16, Karonda Maharajpur Transport Nagar, Jabalpur (M.P.) 482004",
-      phone: ["7880088921", "8450892445"],
+      phone: ["+91 7880088921"],
       email: "prideecomarketing@gmail.com",
       map: "https://www.google.com/maps/search/?api=1&query=Karonda+Maharajpur+Transport+Nagar+Jabalpur"
     },
     {
       city: "Rewa",
       address: "Godown No. 3,4,5,6, Infront of Subhash Rice Mill, Umri Village, Rewa - 486006",
-      phone: ["7880088921", "9755478923"],
+      phone: ["+91 788 008 8921", "9755478923"],
       email: "prideecomarketing@gmail.com",
       map: "https://www.google.com/maps/search/?api=1&query=Umri+Village+Rewa+486006"
     },
     {
       city: "Indore",
       address: "25, Sarvsuvidha Nagar, Behind Aadarsh Shishu Vihar, Indore - 452016",
-      phone: ["9755958924"],
-      email: "shivam.prideecotrade@gmail.com",
+      phone: ["+91 9755958924 "],
+      email: "prideecomarketing@gmail.com",
       map: "https://www.google.com/maps/search/?api=1&query=Sarvsuvidha+Nagar+Indore"
     },
     {
       city: "Bhandara",
       address: "Near Shree Ganesh Traders, Mahatma Phule Colony, Bhandara Nagpur Highway, Bhojapur, Bhandara Maharashtra - 441904",
-      phone: ["7880088921", "8450892445"],
+      phone: ["+91 788 008 8921", "8450892445"],
       email: "prideecomarketing@gmail.com",
       map: "https://www.google.com/maps/search/?api=1&query=Bhandara+Nagpur+Highway+Bhojapur"
     }
@@ -65,80 +64,86 @@ const SolarFooter = () => {
       <div className="container mx-auto px-6 lg:px-0 py-10 relative z-10">
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-{/* Brand */}
-<div className="space-y-6">
+          {/* Brand */}
+          <div className="space-y-6">
 
-  <motion.img
-    initial={{ opacity: 0 }}
-    whileInView={{ opacity: 1 }}
-    src={footerlogo}
-    alt="Pride Eco Logo"
-    className="h-14 w-auto object-contain"
-  />
+            <motion.img
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              src={footerlogo}
+              alt="Pride Eco Logo"
+              className="h-14 w-auto object-contain"
+            />
 
-  {/* Tagline */}
-  <div className="space-y-2">
+            {/* Tagline */}
+            <div className="space-y-2">
 
-    <p className="text-sm font-semibold text-white">
-      Pride Eco Trade LLP
-    </p>
+              <p className="text-sm font-semibold text-white">
+                Pride Eco Trade LLP
+              </p>
 
-    <p className="text-sm text-emerald-400 font-medium">
-      Empowering India’s Solar Future
-    </p>
+              <p className="text-sm text-emerald-400 font-medium">
+                Empowering India’s Solar Future
+              </p>
 
-  </div>
+            </div>
 
-  {/* Partner Information */}
-  <div className="text-xs text-slate-400 space-y-1 leading-relaxed">
+            {/* Partner Information */}
+            <div className="text-xs text-slate-400 space-y-1 leading-relaxed">
 
-    <p>
-      Authorized Channel Partner of 
-      <span className="text-emerald-400"> Adani Solar</span>
-    </p>
+              <p>
+                Authorized Channel Partner of
+                <span className="text-emerald-400"> Adani Solar</span>
+              </p>
 
-    <p>
-      Distribution Partner – 
-      <span className="text-emerald-400"> Microtek Solar Inverters</span>
-    </p>
+              <p>
+                Distribution Partner –
+                <span className="text-emerald-400"> Microtek Solar Inverters</span>
+              </p>
 
-  </div>
+            </div>
 
-  {/* Social Icons */}
-  <div className="flex space-x-5">
-    {[Facebook, Twitter, Linkedin, Instagram].map((Icon, i) => (
-      <motion.a
-        key={i}
-        whileHover={{ y: -3, scale: 1.1 }}
-        href="#"
-        className="bg-slate-900 p-2.5 rounded-lg hover:text-emerald-400 hover:bg-slate-800 transition-all border border-slate-800"
-      >
-        <Icon size={18} />
-      </motion.a>
-    ))}
-  </div>
+            {/* Social Icons */}
+            <div className="flex space-x-5">
+              {[
+                { Icon: Facebook, url: "https://www.facebook.com/profile.php?id=61579463065815" },
+                { Icon: Linkedin, url: "https://www.linkedin.com/company/108973195/admin/" },
+                { Icon: Instagram, url: "https://www.instagram.com/prideecotrade/" },
+              ].map(({ Icon, url }, i) => (
+                <motion.a
+                  key={i}
+                  whileHover={{ y: -3, scale: 1.1 }}
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-slate-900 p-2.5 rounded-lg hover:text-emerald-400 hover:bg-slate-800 transition-all border border-slate-800"
+                >
+                  <Icon size={18} />
+                </motion.a>
+              ))}
+            </div>
 
-</div>
+          </div>
 
           {/* Solutions */}
           <div>
-            <h4 className="text-white font-bold mb-8 uppercase text-xs tracking-[0.2em]">
+            <h4 className="font-serif text-white font-bold mb-8 uppercase text-base tracking-[0.2em]">
               Solutions
             </h4>
 
             <ul className="space-y-4 text-sm">
               {[
-                "Solar PV Modules",
-                "Solar Inverters",
-                "Solar EPC Projects",
-                "Commercial Solar",
-                "Industrial Solar"
+                { name: "Solar PV Modules", path: "/#products" },
+                { name: "Solar Inverters", path: "/#products" },
+                { name: "Solar EPC Projects", path: "/#services" },
+                { name: "Commercial Solar", path: "/#services" },
+                { name: "Industrial Solar", path: "/#services" }
               ].map((item) => (
-                <li key={item}>
-                  <a href="#" className="hover:text-emerald-400 transition-colors flex items-center group">
+                <li key={item.name}>
+                  <Link to={item.path} className="hover:text-emerald-400 transition-colors flex items-center group">
                     <span className="w-0 group-hover:w-2 h-px bg-emerald-400 mr-0 group-hover:mr-2 transition-all opacity-0 group-hover:opacity-100" />
-                    {item}
-                  </a>
+                    {item.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -146,23 +151,23 @@ const SolarFooter = () => {
 
           {/* Support */}
           <div>
-            <h4 className="text-white font-bold mb-8 uppercase text-xs tracking-[0.2em]">
+            <h4 className="font-serif text-white font-bold mb-8 uppercase text-base tracking-[0.2em]">
               Support
             </h4>
 
             <ul className="space-y-4 text-sm">
               {[
-                "Solar Consultation",
-                "EPC Partnership",
-                "Logistics Support",
-                "Privacy Policy",
-                "Terms of Service"
+                { name: "Solar Consultation", path: "/#services" },
+                { name: "EPC Partnership", path: "/#partners" },
+                { name: "Logistics Support", path: "/#services" },
+                { name: "Privacy Policy", path: "/privacy-policy" },
+                { name: "Terms of Service", path: "/terms-of-service" }
               ].map((item) => (
-                <li key={item}>
-                  <a href="#" className="hover:text-emerald-400 transition-colors flex items-center group">
+                <li key={item.name}>
+                  <Link to={item.path} className="hover:text-emerald-400 transition-colors flex items-center group">
                     <span className="w-0 group-hover:w-2 h-px bg-emerald-400 mr-0 group-hover:mr-2 transition-all opacity-0 group-hover:opacity-100" />
-                    {item}
-                  </a>
+                    {item.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -171,7 +176,7 @@ const SolarFooter = () => {
           {/* Locations Accordion */}
           <div>
 
-            <h4 className="text-white font-bold mb-4 uppercase text-xs tracking-[0.2em]">
+            <h4 className="font-serif text-white font-bold mb-4 uppercase text-base tracking-[0.2em]">
               Our Locations
             </h4>
 
@@ -184,11 +189,10 @@ const SolarFooter = () => {
                 return (
                   <div
                     key={index}
-                    className={`border rounded-xl overflow-hidden transition ${
-                      isOpen
+                    className={`border rounded-xl overflow-hidden transition ${isOpen
                         ? "border-emerald-500/50 bg-slate-900/40"
                         : "border-slate-800"
-                    }`}
+                      }`}
                   >
 
                     {/* City Header */}
@@ -196,9 +200,8 @@ const SolarFooter = () => {
                       onClick={() => toggleLocation(index)}
                       className="w-full flex items-center justify-between px-5 py-2 text-left"
                     >
-                      <span className={`text-sm font-semibold ${
-                        isOpen ? "text-emerald-400" : "text-slate-200"
-                      }`}>
+                      <span className={`text-sm font-semibold ${isOpen ? "text-emerald-400" : "text-slate-200"
+                        }`}>
                         {loc.city}
                       </span>
 
@@ -297,13 +300,26 @@ const SolarFooter = () => {
 
         <div className="max-w-7xl mx-auto px-6 lg:px-0 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
 
-          <p>
+          <p className='text-white'>
             © {currentYear} Pride Eco Trade LLP. All rights reserved.
           </p>
-
+          <div className="flex items-center gap-2 text-white  md:text-lg mt-2 md:mt-0">
+            <Code2 className="w-5 h-5 text-white" />
+            <span>
+              Developed by{" "}
+              <a
+                href="https://digitalwebconnection.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-emerald-500  font-bold drop-shadow-[0_1px_0px_rgba(0,0,0,0.8)]  font-serif leading-snug "
+              >
+                Digital Web Connection
+              </a>
+            </span>
+          </div>
           <div className="flex items-center space-x-6">
 
-            <span>Made with ☀️ in India</span>
+            <span className='text-white'>Made with ☀️ in India</span>
 
             <div className="flex items-center gap-2">
 
