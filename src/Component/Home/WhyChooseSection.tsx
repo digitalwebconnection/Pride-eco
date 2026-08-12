@@ -1,4 +1,4 @@
-'use client';
+
 
 import { motion } from "framer-motion";
 import { ShieldCheck, Sun, Truck, Users, Wrench, Handshake } from "lucide-react";

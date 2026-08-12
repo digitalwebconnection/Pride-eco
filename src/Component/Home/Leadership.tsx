@@ -1,4 +1,4 @@
-'use client';
+
 
 import { motion } from "framer-motion";
 import { Award, Leaf, Zap, GraduationCap, ChevronRight } from "lucide-react";

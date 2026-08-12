@@ -1,4 +1,4 @@
-'use client';
+
 
 import { motion, useMotionValue, useTransform, animate, useInView, type Variants } from "framer-motion";
 import { Zap, Sun, MapPin, Building2 } from "lucide-react";

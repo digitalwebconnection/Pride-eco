@@ -1,4 +1,4 @@
-'use client';
+
 
 import { motion, type Variants } from "framer-motion";
 import { Sun, Wrench, Home, Building, Factory, CheckCircle2 } from "lucide-react";
