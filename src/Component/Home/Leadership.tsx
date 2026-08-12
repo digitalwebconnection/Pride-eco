@@ -1,5 +1,3 @@
-
-
 import { motion } from "framer-motion";
 import { Award, Leaf, Zap, GraduationCap, ChevronRight } from "lucide-react";
 
@@ -39,7 +37,9 @@ const Leadership = () => {
               <div className="rounded-4xl overflow-hidden shadow-2xl border-8 border-white">
                 <img
                   src="/shiva-sir.webp"
-                  className="w-full h-145 object-cover hover:scale-105 transition-transform duration-700"
+                  className="w-full h-145 object-cover hover:scale-105 transition-transform duration-700 select-none"
+                  draggable={false}
+                  onContextMenu={(e) => e.preventDefault()}
                 />
               </div>
 

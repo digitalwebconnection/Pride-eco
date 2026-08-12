@@ -94,7 +94,9 @@ const ChannelPartners = () => {
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  className="h-20 object-contain"
+                  className="h-20 object-contain select-none"
+                  draggable={false}
+                  onContextMenu={(e) => e.preventDefault()}
                 />
               </motion.div>
 

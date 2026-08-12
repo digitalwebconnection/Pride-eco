@@ -67,19 +67,19 @@ export default function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
   const validate = (): boolean => {
     const newErrors: FormErrors = {};
     if (!formData.name.trim()) newErrors.name = "Name is required";
-    
+
     if (!formData.email.trim()) {
       newErrors.email = "Email is required";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = "Invalid email format";
     }
-    
+
     if (!formData.phone.trim()) {
       newErrors.phone = "Phone number is required";
     } else if (!/^\d{10}$/.test(formData.phone)) {
       newErrors.phone = "Phone number must be exactly 10 digits";
     }
-    
+
     if (!formData.location.trim()) newErrors.location = "City / Location is required";
     if (!formData.description.trim()) newErrors.description = "Description is required";
 
@@ -92,7 +92,7 @@ export default function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
 
     if (validate()) {
       setIsSubmitting(true);
-      
+
       try {
         const response = await fetch("https://api.web3forms.com/submit", {
           method: "POST",
@@ -112,7 +112,7 @@ export default function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
 
         if (result.success) {
           toast.success("Enquiry submitted successfully! We'll contact you soon.");
-          
+
           // Reset form
           setFormData({
             name: "",
@@ -139,7 +139,7 @@ export default function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    
+
     if (name === "phone") {
       // Allow only exactly up to 10 digits
       const numericValue = value.replace(/\D/g, "").slice(0, 10);
@@ -182,7 +182,7 @@ export default function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
                 <X size={24} />
               </button>
               <div className="bg-white inline-block px-4 py-2 rounded-xl mb-3 shadow-md">
-                <img src={logo} alt="Pride Eco" className="h-8 md:h-12 object-contain" />
+                <img src={logo} alt="Pride Eco" className="h-8 md:h-12 object-contain select-none" draggable={false} onContextMenu={(e) => e.preventDefault()} />
               </div>
               <h2 className="font-serif text-xl md:text-3xl font-bold">Send us your requirement</h2>
               <p className="text-white mt-1 md:mt-2 text-xs md:text-sm leading-relaxed max-w-md">

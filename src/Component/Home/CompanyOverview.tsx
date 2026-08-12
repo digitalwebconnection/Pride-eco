@@ -132,7 +132,9 @@ const AboutPrideEco = () => {
               <img
                 src={solar1}
                 alt="Company Overview"
-                className="w-full h-full object-cover transform hover:scale-105 transition duration-700"
+                className="w-full h-full object-cover transform hover:scale-105 transition duration-700 select-none"
+                draggable={false}
+                onContextMenu={(e) => e.preventDefault()}
               />
             </div>
 

@@ -93,7 +93,9 @@ const SolarHero = () => {
           <img
             src={slides[current].image}
             alt="Solar Background"
-            className="w-full h-full bg-cover object-cover"
+            className="w-full h-full bg-cover object-cover select-none"
+            draggable={false}
+            onContextMenu={(e) => e.preventDefault()}
           />
           {/* DARK OVERLAY */}
           <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/70 to-black/40" />

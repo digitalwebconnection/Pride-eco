@@ -76,7 +76,9 @@ export default function Header() {
             <img
               src={logo}
               alt="Prideeco Logo"
-              className={`transition-all duration-300 ${isScrolled ? "h-10 md:h-12" : "h-12 md:h-14"}`}
+              className={`transition-all duration-300 ${isScrolled ? "h-10 md:h-12" : "h-12 md:h-14"} select-none`}
+              draggable={false}
+              onContextMenu={(e) => e.preventDefault()}
             />
           </Link>
 

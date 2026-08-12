@@ -115,9 +115,11 @@ function ProductCard({ item }: { item: { src: string; alt: string; label: string
                 <img
                     src={item.src}
                     alt={item.alt}
-                    className="max-h-full max-w-full object-contain  hover:scale-110 transition-transform duration-500"
+                    className="max-h-full max-w-full object-contain  hover:scale-110 transition-transform duration-500 select-none"
                     loading="eager"
                     decoding="async"
+                    draggable={false}
+                    onContextMenu={(e) => e.preventDefault()}
                 />
             </div>
 
