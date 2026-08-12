@@ -101,7 +101,7 @@ export default function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
             Accept: "application/json",
           },
           body: JSON.stringify({
-            access_key: "5e16eb98-ca7a-4345-981a-db330b55d399", // Replace with your Web3Forms Access Key
+            access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY,
             subject: `New Solar Enquiry from ${formData.name}`,
             from_name: "Pride Eco Website",
             ...formData,
